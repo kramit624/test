@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repository Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Repository Checker</h1>
+        
+        <form method="POST">
+            <label for="repo_name">Enter the repository name (username/repository):</label>
+            <input type="text" id="repo_name" name="repo_name" required>
+            <button type="submit">Check</button>
+        </form>
+
+        {% if repo_status %}
+            <div class="repo-status">
+                <p>{{ repo_status }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+    
